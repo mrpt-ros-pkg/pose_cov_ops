@@ -2,6 +2,10 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Ported from old repository in mrpt_navigation
+
 0.1.3 (2014-12-18)
 ------------------
 * Fix many missing install files
