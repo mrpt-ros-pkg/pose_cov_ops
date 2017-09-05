@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.1)
+set (CMAKE_CXX_STANDARD 14)
 project(pose_cov_ops)
-set (CMAKE_CXX_STANDARD 14)  # Require C++14
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
