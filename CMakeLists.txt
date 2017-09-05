@@ -10,7 +10,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp geometry_msgs mrpt_bridge)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
-find_package(MRPT REQUIRED base)
+find_package(MRPT 1.5 REQUIRED base)
 #include_directories(${MRPT_INCLUDE_DIRS})
 #MESSAGE( STATUS "MRPT_INCLUDE_DIRS: " ${MRPT_INCLUDE_DIRS})
 #link_directories(${MRPT_LIBRARY_DIRS})
