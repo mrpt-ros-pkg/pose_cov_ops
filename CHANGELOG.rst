@@ -2,6 +2,13 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix catkin dependencies
+* Use C++14
+* Fix build against MRPT 1.5 and 2.0
+* Contributors: Javier G. Monroy, Jose Luis Blanco Claraco, Jose Luis Blanco-Claraco
+
 0.1.5 (2014-12-23)
 ------------------
 
