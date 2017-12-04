@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.6 (2017-12-04)
+------------------
 * Fix catkin dependencies
 * Use C++14
 * Fix build against MRPT 1.5 and 2.0
