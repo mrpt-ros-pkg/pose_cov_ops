@@ -85,8 +85,8 @@ find_package(MRPT 1.5 REQUIRED base)
 catkin_package(
 INCLUDE_DIRS include
   LIBRARIES pose_cov_ops
-  CATKIN_DEPENDS mrpt_bridge
-  DEPENDS mrpt
+  CATKIN_DEPENDS mrpt_bridge geometry_msgs
+#  DEPENDS mrpt
 )
 
 ###########
