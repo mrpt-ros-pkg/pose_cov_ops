@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.1)
-set (CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_STANDARD 14) # C++14 actually only needed when building 
+# from sources and against mrpt>=1.9. No C++14 features used in this pkg.
+
 project(pose_cov_ops)
 
 ## Find catkin macros and libraries
@@ -10,7 +12,7 @@ find_package(catkin REQUIRED COMPONENTS roscpp geometry_msgs mrpt_bridge)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
-find_package(MRPT 1.5 REQUIRED base)
+find_package(MRPT REQUIRED base)
 MESSAGE(STATUS "Found MRPT: " ${MRPT_VERSION})
 
 if (CMAKE_COMPILER_IS_GNUCXX)
