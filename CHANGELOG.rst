@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.7 (2017-12-09)
+------------------
 * relaxing need to find lib mrpt >=1.5
 * Silent GCC warnings with Eigen hdrs
 * Contributors: Jose Luis Blanco Claraco
