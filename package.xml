@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>pose_cov_ops</name>
-  <version>0.1.7</version>
+  <version>0.1.8</version>
   <description>Library with C++ functions for SE(2/3) pose and 2D/3D point
     composition operations with uncertainty</description>
 

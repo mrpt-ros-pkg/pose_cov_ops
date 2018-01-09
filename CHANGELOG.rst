@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.8 (2018-01-09)
+------------------
 * Made compatible with MRPT 1.x and 2.x
 * Contributors: Jose Luis Blanco Claraco
 
