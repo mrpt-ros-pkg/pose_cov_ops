@@ -1,6 +1,5 @@
-cmake_minimum_required(VERSION 3.1)
-set (CMAKE_CXX_STANDARD 14) # C++14 actually only needed when building 
-# from sources and against mrpt>=1.9. No C++14 features used in this pkg.
+cmake_minimum_required(VERSION 3.0)
+set (CMAKE_CXX_STANDARD 11)
 
 project(pose_cov_ops)
 
@@ -12,8 +11,17 @@ find_package(catkin REQUIRED COMPONENTS roscpp geometry_msgs mrpt_bridge)
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
-find_package(MRPT REQUIRED base)
+find_package(MRPT REQUIRED)
 MESSAGE(STATUS "Found MRPT: " ${MRPT_VERSION})
+IF(MRPT_VERSION VERSION_LESS 1.9.9)
+	# MRPT<2.0
+	find_package(MRPT REQUIRED base)
+ELSE()
+	# MRPT>=2.0
+	set (CMAKE_CXX_STANDARD 14) # C++14 actually only needed when building
+	find_package(MRPT REQUIRED poses)
+ENDIF()
+
 
 if (CMAKE_COMPILER_IS_GNUCXX)
 	# High level of warnings.
