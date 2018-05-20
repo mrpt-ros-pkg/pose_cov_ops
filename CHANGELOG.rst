@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.1 (2018-05-21)
+------------------
 * fix catkin_lint issues
 * Contributors: Jose Luis Blanco Claraco
 
