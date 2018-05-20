@@ -6,21 +6,25 @@ project(pose_cov_ops)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS roscpp geometry_msgs mrpt_bridge)
+find_package(catkin REQUIRED COMPONENTS
+	geometry_msgs
+	mrpt_bridge
+	roscpp
+)
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
 
 find_package(MRPT REQUIRED)
-MESSAGE(STATUS "Found MRPT: " ${MRPT_VERSION})
-IF(MRPT_VERSION VERSION_LESS 1.9.9)
+message(STATUS "Found MRPT: " ${MRPT_VERSION})
+if("${MRPT_VERSION}" VERSION_LESS "1.9.9")
 	# MRPT<2.0
 	find_package(MRPT REQUIRED base)
-ELSE()
+else()
 	# MRPT>=2.0
 	set (CMAKE_CXX_STANDARD 14) # C++14 actually only needed when building
 	find_package(MRPT REQUIRED poses)
-ENDIF()
+endif()
 
 
 if (CMAKE_COMPILER_IS_GNUCXX)
@@ -102,9 +106,10 @@ endif()
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 INCLUDE_DIRS include
-  LIBRARIES pose_cov_ops
-  CATKIN_DEPENDS mrpt_bridge geometry_msgs
-#  DEPENDS mrpt
+  LIBRARIES ${PROJECT_NAME}
+  CATKIN_DEPENDS
+		geometry_msgs
+		mrpt_bridge
 )
 
 ###########
@@ -117,7 +122,7 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 
 ## Declare a cpp library
 add_library(${PROJECT_NAME}
-   src/pose_cov_ops.cpp
+   src/${PROJECT_NAME}.cpp
 )
 
 ## Declare a cpp executable
@@ -148,10 +153,10 @@ target_link_libraries(${PROJECT_NAME}
 # )
 
 ## Mark executables and/or libraries for installation
- install(TARGETS ${PROJECT_NAME}
-   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+install(TARGETS ${PROJECT_NAME}
+	ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+	LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+	RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
 ## Mark cpp header files for installation

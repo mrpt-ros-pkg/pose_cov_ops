@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>pose_cov_ops</name>
   <version>0.2.0</version>
-  <description>Library with C++ functions for SE(2/3) pose and 2D/3D point
+  <description>C++ library for SE(2/3) pose and 2D/3D point
     composition operations with uncertainty</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
@@ -13,24 +13,20 @@
 
   <url type="website">http://wiki.ros.org/pose_cov_ops</url>
 
+  <depend>mrpt1</depend> <!-- Depend on mrpt1 ROS pkgs -->
+
+  <depend>roscpp</depend>
+  <depend>geometry_msgs</depend>
+  <depend>mrpt_bridge</depend>
+
+  <!-- Use buildtool_depend for build tool packages: -->
   <buildtool_depend>catkin</buildtool_depend>
-
-  <build_depend>roscpp</build_depend>
-  <build_depend>geometry_msgs</build_depend>
-  <build_depend>mrpt_bridge</build_depend>
-  <build_depend>mrpt</build_depend> <!-- Depend on mrpt system pkgs -->
-
-  <run_depend>roscpp</run_depend>
-  <run_depend>geometry_msgs</run_depend>
-  <run_depend>mrpt_bridge</run_depend>
-  <run_depend>mrpt</run_depend> <!-- Depend on mrpt system pkgs -->
+  <!-- Use test_depend for packages you need only for testing: -->
+  <test_depend>rosunit</test_depend>
+  <test_depend>gtest</test_depend>
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
-    <!-- You can specify that this package is a metapackage here: -->
-    <!-- <metapackage/> -->
-
     <!-- Other tools can request additional information be placed here -->
-
   </export>
 </package>
