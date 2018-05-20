@@ -2,6 +2,11 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* fix catkin_lint issues
+* Contributors: Jose Luis Blanco Claraco
+
 0.2.0 (2018-01-09)
 ------------------
 * Made compatible with MRPT 1.x and 2.x
