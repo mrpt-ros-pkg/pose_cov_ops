@@ -18,6 +18,7 @@ find_package(MRPT REQUIRED)
 message(STATUS "Found MRPT: " ${MRPT_VERSION})
 if("${MRPT_VERSION}" VERSION_LESS "1.9.9")
 	# MRPT<2.0
+	set (CMAKE_CXX_STANDARD 11)
 	find_package(MRPT REQUIRED base)
 else()
 	# MRPT>=2.0
@@ -148,7 +149,7 @@ endif()
 ## Specify libraries to link a library or executable target against
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES}
-  ${MRPT_LIBS}
+  ${MRPT_LIBRARIES}
 )
 
 #############
