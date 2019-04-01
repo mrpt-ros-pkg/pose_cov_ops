@@ -15,13 +15,13 @@ find_package(catkin REQUIRED COMPONENTS
 # find_package(Boost REQUIRED COMPONENTS system)
 
 find_package(MRPT REQUIRED)
-message(WARNING "Found MRPT: " ${MRPT_VERSION})
+message(STATUS "Found MRPT: " ${MRPT_VERSION})
 if("${MRPT_VERSION}" VERSION_LESS "1.9.9")
 	# MRPT<2.0
 	find_package(MRPT REQUIRED base)
 else()
 	# MRPT>=2.0
-    find_package(MRPT REQUIRED poses)
+	find_package(MRPT REQUIRED poses)
 endif()
 
 ## Uncomment this if the package has a setup.py. This macro ensures
