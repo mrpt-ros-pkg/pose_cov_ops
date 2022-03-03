@@ -11,7 +11,7 @@
 
   <license>BSD</license>
 
-  <url type="website">http://wiki.ros.org/pose_cov_ops</url>
+  <url type="website">https://wiki.ros.org/pose_cov_ops</url>
 
   <depend>mrpt2</depend> <!-- Depend on mrpt1 ROS pkgs -->
 
