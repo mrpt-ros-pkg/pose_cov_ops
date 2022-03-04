@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.0 (2022-03-04)
+------------------
 * Update URLs to https
 * Update build dep to mrpt2
 * update to mrpt2
