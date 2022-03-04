@@ -2,6 +2,17 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update URLs to https
+* Update build dep to mrpt2
+* update to mrpt2
+* add basic unit test
+* Set message to status again instead of warning
+* Updating CMakeLists.txt to pass build on Ubuntu 16.04LTS with CMake 3.5 with the latest version of MRPT
+* Add ros build farm badgets and links
+* Contributors: Inounx, Jose Luis Blanco-Claraco, Julian Lopez Velasquez
+
 0.2.1 (2018-05-21)
 ------------------
 * fix catkin_lint issues
