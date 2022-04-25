@@ -13,7 +13,7 @@
 
   <url type="website">https://wiki.ros.org/pose_cov_ops</url>
 
-  <depend>mrpt2</depend> <!-- Depend on mrpt1 ROS pkgs -->
+  <depend>mrpt2</depend>
 
   <depend>roscpp</depend>
   <depend>geometry_msgs</depend>
