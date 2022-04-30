@@ -2,6 +2,13 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update README.md
+* remove wrong xml comment reference to mrpt1
+* remove travis CI
+* Contributors: Jose Luis Blanco-Claraco
+
 0.3.0 (2022-03-04)
 ------------------
 * Update URLs to https
