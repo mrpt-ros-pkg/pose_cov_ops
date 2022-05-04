@@ -4,9 +4,10 @@ Changelog for package pose_cov_ops
 
 Forthcoming
 -----------
-* Update README.md
+* Add License file
 * remove wrong xml comment reference to mrpt1
 * remove travis CI
+* Update README.md
 * Contributors: Jose Luis Blanco-Claraco
 
 0.3.0 (2022-03-04)
