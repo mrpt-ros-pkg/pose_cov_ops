@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.1 (2022-05-04)
+------------------
 * Add License file
 * remove wrong xml comment reference to mrpt1
 * remove travis CI
