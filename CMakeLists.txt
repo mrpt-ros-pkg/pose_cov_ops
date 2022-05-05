@@ -7,23 +7,11 @@ project(pose_cov_ops)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
 	geometry_msgs
-	mrpt_bridge
 	roscpp
 )
 
-## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
-
-find_package(MRPT REQUIRED)
-message(STATUS "Found MRPT: " ${MRPT_VERSION})
-if("${MRPT_VERSION}" VERSION_LESS "1.9.9")
-	# MRPT<2.0
-	set (CMAKE_CXX_STANDARD 11)
-	find_package(MRPT REQUIRED base)
-else()
-	# MRPT>=2.0
-	find_package(MRPT REQUIRED poses)
-endif()
+# MRPT>=2.0
+find_package(MRPT REQUIRED poses ros1bridge)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
 ## modules and global scripts declared therein get installed
@@ -95,7 +83,6 @@ INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS
 		geometry_msgs
-		mrpt_bridge
 )
 
 ###########
@@ -111,22 +98,8 @@ add_library(${PROJECT_NAME}
    src/${PROJECT_NAME}.cpp
 )
 
-if("${MRPT_VERSION}" VERSION_LESS "1.9.9")
-    set(CMAKE_CXX_STANDARD 14)
-else()
-    #Need to enable C++17
-    #We take into account that ubuntu 16.04 LTS only has cmake 3.5
-    if(${CMAKE_VERSION} VERSION_LESS "3.8.0")
-        #Manually set c++17 which is not supported before cmake 3.8.0
-        if (CMAKE_COMPILER_IS_GNUCXX)
-            target_compile_options(${PROJECT_NAME} PUBLIC -std=gnu++17)
-        elseif()
-            message(FATAL_ERROR "You have to enable C++17 for your compiler here")
-        endif()
-    else()
-        set(CMAKE_CXX_STANDARD 17)
-    endif()
-endif()
+# Done automatically via mrpt exported cmake flags
+# set(CMAKE_CXX_STANDARD 17)
 
 if (CMAKE_COMPILER_IS_GNUCXX)
 	# High level of warnings.
@@ -149,7 +122,8 @@ endif()
 ## Specify libraries to link a library or executable target against
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES}
-  ${MRPT_LIBRARIES}
+  mrpt::poses
+  mrpt::ros1bridge
 )
 
 #############

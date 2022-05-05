@@ -17,7 +17,6 @@
 
   <depend>roscpp</depend>
   <depend>geometry_msgs</depend>
-  <depend>mrpt_bridge</depend>
 
   <!-- Use buildtool_depend for build tool packages: -->
   <buildtool_depend>catkin</buildtool_depend>
