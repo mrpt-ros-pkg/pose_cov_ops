@@ -7,7 +7,7 @@
 
 #include <gtest/gtest.h>
 #include <mrpt/poses/CPose3D.h>
-#include <mrpt/version.h>
+#include <mrpt/ros1bridge/pose.h>
 #include <pose_cov_ops/pose_cov_ops.h>
 
 using namespace std;
@@ -38,18 +38,17 @@ TEST(PoseCovOps, composition) {
   geometry_msgs::PoseWithCovariance ab;
   pose_cov_ops::compose(a, b, ab);
 
-  mrpt::poses::CPose3D a_mrpt, b_mrpt, ab_mrpt;
-  mrpt_bridge::convert(a.pose, a_mrpt);
-  mrpt_bridge::convert(b.pose, b_mrpt);
-  mrpt_bridge::convert(ab.pose, ab_mrpt);
-#if MRPT_VERSION >= 0x199
+  const mrpt::poses::CPose3D a_mrpt = mrpt::ros1bridge::fromROS(a.pose);
+  const mrpt::poses::CPose3D b_mrpt = mrpt::ros1bridge::fromROS(b.pose);
+  const mrpt::poses::CPose3D ab_mrpt = mrpt::ros1bridge::fromROS(ab.pose);
+
   std::cout << "a: " << a_mrpt.asString() << "\nRot:\n"
             << a_mrpt.getRotationMatrix() << "\n";
   std::cout << "b: " << b_mrpt.asString() << "\nRot:\n"
             << b_mrpt.getRotationMatrix() << "\n";
   std::cout << "a+b: " << ab_mrpt.asString() << "\nRot:\n"
             << ab_mrpt.getRotationMatrix() << "\n";
-#endif
+
   std::cout << "a: " << a << "\n";
   std::cout << "b: " << b << "\n";
   std::cout << "a(+)b: " << ab << "\n";
