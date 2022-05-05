@@ -1,11 +1,10 @@
 <?xml version="1.0"?>
-<package format="2">
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>pose_cov_ops</name>
   <version>0.3.1</version>
-  <description>C++ library for SE(2/3) pose and 2D/3D point
-    composition operations with uncertainty</description>
+  <description>C++ library for SE(2)/SE(3) pose composition operations with uncertainty</description>
 
-  <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <maintainer email="jlblanco@ual.es">Jose-Luis Blanco-Claraco</maintainer>
   <maintainer email="markus.bader@tuwien.ac.at">Markus Bader</maintainer>
 
@@ -15,17 +14,22 @@
 
   <depend>mrpt2</depend>
 
-  <depend>roscpp</depend>
-  <depend>geometry_msgs</depend>
+  <!-- ROS1 -->
+  <depend           condition="$ROS_VERSION == 1">roscpp</depend>
+  <buildtool_depend condition="$ROS_VERSION == 1">catkin</buildtool_depend>
+  <test_depend      condition="$ROS_VERSION == 1">rosunit</test_depend>
 
-  <!-- Use buildtool_depend for build tool packages: -->
-  <buildtool_depend>catkin</buildtool_depend>
-  <!-- Use test_depend for packages you need only for testing: -->
-  <test_depend>rosunit</test_depend>
+  <!-- ROS2 -->
+  <buildtool_depend condition="$ROS_VERSION == 2">ament_cmake</buildtool_depend>
+  <test_depend      condition="$ROS_VERSION == 2">ament_lint_auto</test_depend>
+  <test_depend      condition="$ROS_VERSION == 2">ament_lint_common</test_depend>
+
+  <!-- COMMON -->
+  <depend>geometry_msgs</depend>
   <test_depend>gtest</test_depend>
 
-  <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
+    <build_type condition="$ROS_VERSION == 2">ament_cmake</build_type>
   </export>
 </package>
