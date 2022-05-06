@@ -1,7 +1,9 @@
-if ("$ENV{ROS_VERSION}" STREQUAL "1")
-	cmake_minimum_required(VERSION 3.1)
-else()
+if ("$ENV{ROS_VERSION}" STREQUAL "2")
 	cmake_minimum_required(VERSION 3.8)
+	set(ROS_2 TRUE)
+else()
+	cmake_minimum_required(VERSION 3.1)
+	set(ROS_1 TRUE)
 endif()
 
 project(pose_cov_ops)
@@ -9,7 +11,7 @@ project(pose_cov_ops)
 # -----------------------------------------
 # ROS 1
 # -----------------------------------------
-if ("$ENV{ROS_VERSION}" STREQUAL "1")
+if (ROS_1)
 	## Find catkin macros and libraries
 	## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 	## is used, also find other catkin packages
@@ -38,7 +40,7 @@ endif()
 # -----------------------------------------
 # ROS 2
 # -----------------------------------------
-if ("$ENV{ROS_VERSION}" STREQUAL "2")
+if (ROS_2)
 	# find dependencies
 	if (TARGET ${PROJECT_NAME})
 		message(STATUS "********** EXISTS 1!")
@@ -130,7 +132,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 # )
 
 # Mark executables and/or libraries for installation
-if ("$ENV{ROS_VERSION}" STREQUAL "2")
+if (ROS_2)
 	set(CATKIN_PACKAGE_LIB_DESTINATION lib)
 	set(CATKIN_PACKAGE_BIN_DESTINATION bin)
 	set(CATKIN_PACKAGE_INCLUDE_DESTINATION include)
@@ -152,11 +154,11 @@ install(DIRECTORY include/${PROJECT_NAME}/
 ## Testing ##
 #############
 # Add gtest based cpp test target and link libraries
-if ($ENV{ROS_VERSION} STREQUAL "1")
+if (ROS_1)
 	catkin_add_gtest(${PROJECT_NAME}-test test/test_pose_cov_ops.cpp)
 endif()
 
-if ($ENV{ROS_VERSION} STREQUAL "2")
+if (ROS_2)
 	find_package(ament_cmake_copyright REQUIRED)
 	find_package(ament_cmake_cppcheck REQUIRED)
 	find_package(ament_cmake_cpplint REQUIRED)
