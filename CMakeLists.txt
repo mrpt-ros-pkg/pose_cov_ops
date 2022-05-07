@@ -1,3 +1,5 @@
+execute_process(COMMAND bash -c "env | grep ROS" OUTPUT_VARIABLE ENV_VAL)
+message(STATUS "Env variables:\n${ENV_VAL}")
 if ("$ENV{ROS_VERSION}" STREQUAL "2")
 	cmake_minimum_required(VERSION 3.8)
 	set(ROS_2 TRUE)
@@ -42,16 +44,7 @@ endif()
 # -----------------------------------------
 if (ROS_2)
 	# find dependencies
-	if (TARGET ${PROJECT_NAME})
-		message(STATUS "********** EXISTS 1!")
-	endif()
-
 	find_package(ament_cmake REQUIRED)
-
-	if (TARGET ${PROJECT_NAME})
-		message(STATUS "********** EXISTS 2!")
-	endif()
-
 endif()
 
 # -----------------------------------------
@@ -70,18 +63,10 @@ if (catkin_INCLUDE_DIRS)
 	include_directories(include ${catkin_INCLUDE_DIRS})
 endif()
 
-if (TARGET ${PROJECT_NAME})
-message(STATUS "********** EXISTS 3!")
-endif()
-
 ## Declare a cpp library
 add_library(${PROJECT_NAME} SHARED
    src/${PROJECT_NAME}.cpp
 )
-
-if (TARGET ${PROJECT_NAME})
-message(STATUS "********** EXISTS 4!")
-endif()
 
 # Done automatically via mrpt exported cmake flags
 # set(CMAKE_CXX_STANDARD 17)
