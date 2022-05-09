@@ -12,7 +12,11 @@
 
   <url type="website">https://wiki.ros.org/pose_cov_ops</url>
 
+  <!-- COMMON -->
   <depend>mrpt2</depend>
+  <depend>geometry_msgs</depend>
+  <build_depend>ros_environment</build_depend>
+  <test_depend>gtest</test_depend>
 
   <!-- ROS1 -->
   <depend           condition="$ROS_VERSION == 1">roscpp</depend>
@@ -23,10 +27,6 @@
   <buildtool_depend condition="$ROS_VERSION == 2">ament_cmake</buildtool_depend>
   <test_depend      condition="$ROS_VERSION == 2">ament_lint_auto</test_depend>
   <test_depend      condition="$ROS_VERSION == 2">ament_lint_common</test_depend>
-
-  <!-- COMMON -->
-  <depend>geometry_msgs</depend>
-  <test_depend>gtest</test_depend>
 
   <export>
     <!-- Other tools can request additional information be placed here -->
