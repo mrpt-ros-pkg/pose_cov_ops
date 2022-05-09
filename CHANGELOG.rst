@@ -2,6 +2,12 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Unify ros1/ros2 build system in one single git branch.
+* Port to mrpt2, avoid dependency on pkg mrpt_bridge
+* Contributors: Jose Luis Blanco Claraco
+
 0.3.1 (2022-05-04)
 ------------------
 * Add License file
