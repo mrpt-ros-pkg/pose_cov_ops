@@ -37,6 +37,8 @@ if (ROS_1)
 		CATKIN_DEPENDS
 				geometry_msgs
 		)
+		
+	find_package(mrpt-ros1bridge REQUIRED)
 endif()
 
 # -----------------------------------------
@@ -45,13 +47,14 @@ endif()
 if (ROS_2)
 	# find dependencies
 	find_package(ament_cmake REQUIRED)
+
+	find_package(mrpt-ros2bridge REQUIRED)
 endif()
 
 # -----------------------------------------
 # ROS 1 & 2 common deps:
 # -----------------------------------------
 find_package(mrpt-poses REQUIRED)
-find_package(mrpt-ros1bridge REQUIRED)
 
 ###########
 ## Build ##
@@ -95,11 +98,21 @@ endif()
 target_link_libraries(${PROJECT_NAME} PRIVATE
   ${catkin_LIBRARIES}
   mrpt::poses
-  mrpt::ros1bridge
 )
+if (ROS_1)
+    target_link_libraries(${PROJECT_NAME} PRIVATE mrpt::ros1bridge)
+else()
+    target_link_libraries(${PROJECT_NAME} PRIVATE mrpt::ros2bridge)
+endif()
+
+
 target_include_directories(${PROJECT_NAME} PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
   "$<INSTALL_INTERFACE:include/${PROJECT_NAME}>"
+)
+
+target_compile_definitions(${PROJECT_NAME} PUBLIC
+    $<IF:$<BOOL:ROS_1>,HAVE_ROS1,HAVE_ROS2>
 )
 
 #############
@@ -173,9 +186,13 @@ if (ROS_2)
 endif()
 
 if(TARGET ${PROJECT_NAME}-test)
-target_link_libraries(${PROJECT_NAME}-test 
-	${PROJECT_NAME}
-	mrpt::poses
-	mrpt::ros1bridge
-	)
+	target_link_libraries(${PROJECT_NAME}-test
+		${PROJECT_NAME}
+		mrpt::poses
+		)
+	if (ROS_1)
+		target_link_libraries(${PROJECT_NAME}-test mrpt::ros1bridge)
+	else()
+		target_link_libraries(${PROJECT_NAME}-test mrpt::ros2bridge)
+	endif()
 endif()
