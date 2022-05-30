@@ -16,13 +16,9 @@
 
 namespace pose_cov_ops {
 
-#if PACKAGE_ROS_VERSION == 1
 using Pose = geometry_msgs::Pose;
 using PoseWithCovariance = geometry_msgs::PoseWithCovariance;
-#else
-using Pose = geometry_msgs::msg::Pose;
-using PoseWithCovariance = geometry_msgs::msg::PoseWithCovariance;
-#endif
+
 
 /** @name  Pose composition: out = a (+) b
     @{ */
