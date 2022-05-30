@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.3 (2022-05-30)
+------------------
 * Fix build for ros2
 * Rename license as "LICENSE"
 * Add contributing.md file
