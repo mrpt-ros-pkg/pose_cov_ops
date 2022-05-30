@@ -2,6 +2,13 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix build for ros2
+* Rename license as "LICENSE"
+* Add contributing.md file
+* Contributors: Jose Luis Blanco-Claraco
+
 0.3.2 (2022-05-10)
 ------------------
 * Unify ros1/ros2 build system in one single git branch.
