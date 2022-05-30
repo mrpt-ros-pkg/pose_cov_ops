@@ -1,22 +1,31 @@
-/*
- * test_pose_cov_ops.cpp
+/* pose_cov_ops
  *
- *  Created on: Dec 23, 2019
- *      Author: Jose Luis Blanco Claraco
+ * Copyright 2012-2022, Jose Luis Blanco Claraco
+ * License: BSD 3-Clause License
  */
 
-#include <gtest/gtest.h>
-#include <mrpt/poses/CPose3D.h>
-#include <mrpt/ros1bridge/pose.h>
 #include <pose_cov_ops/pose_cov_ops.h>
+//
+#include <gtest/gtest.h>
+#include <iostream>
+#include <mrpt/poses/CPose3D.h>
 
-using namespace std;
+#if PACKAGE_ROS_VERSION == 1
+#include <mrpt/ros1bridge/pose.h>
+namespace m2r = mrpt::ros1bridge;
+#else
+#include <mrpt/ros2bridge/pose.h>
+namespace m2r = mrpt::ros2bridge;
+#endif
 
 TEST(PoseCovOps, composition) {
-  // Test added whiel debugging report:
+  using namespace std;
+  using namespace pose_cov_ops;
+
+  // Test added while debugging report:
   // https://github.com/mrpt-ros-pkg/pose_cov_ops/issues/7
 
-  geometry_msgs::PoseWithCovariance a;
+  PoseWithCovariance a;
   a.pose.position.x = -0.333330;
   a.pose.position.y = 0;
   a.pose.position.z = 0.100000;
@@ -26,7 +35,7 @@ TEST(PoseCovOps, composition) {
   a.pose.orientation.z = 0.707107;
   a.pose.orientation.w = -0.000005;
 
-  geometry_msgs::PoseWithCovariance b;
+  PoseWithCovariance b;
   b.pose.position.x = 1.435644;
   b.pose.position.y = 0;
   b.pose.position.z = 0;
@@ -35,12 +44,12 @@ TEST(PoseCovOps, composition) {
   b.pose.orientation.z = 0;
   b.pose.orientation.w = 0;
 
-  geometry_msgs::PoseWithCovariance ab;
+  PoseWithCovariance ab;
   pose_cov_ops::compose(a, b, ab);
 
-  const mrpt::poses::CPose3D a_mrpt = mrpt::ros1bridge::fromROS(a.pose);
-  const mrpt::poses::CPose3D b_mrpt = mrpt::ros1bridge::fromROS(b.pose);
-  const mrpt::poses::CPose3D ab_mrpt = mrpt::ros1bridge::fromROS(ab.pose);
+  const mrpt::poses::CPose3D a_mrpt = m2r::fromROS(a.pose);
+  const mrpt::poses::CPose3D b_mrpt = m2r::fromROS(b.pose);
+  const mrpt::poses::CPose3D ab_mrpt = m2r::fromROS(ab.pose);
 
   std::cout << "a: " << a_mrpt.asString() << "\nRot:\n"
             << a_mrpt.getRotationMatrix() << "\n";
@@ -49,9 +58,11 @@ TEST(PoseCovOps, composition) {
   std::cout << "a+b: " << ab_mrpt.asString() << "\nRot:\n"
             << ab_mrpt.getRotationMatrix() << "\n";
 
+#if 0
   std::cout << "a: " << a << "\n";
   std::cout << "b: " << b << "\n";
   std::cout << "a(+)b: " << ab << "\n";
+#endif
 
   EXPECT_NEAR(ab.pose.position.x, -0.3333333, 0.01);
 }
