@@ -36,7 +36,7 @@
   <!-- ROS2 -->
   <test_depend      condition="$ROS_VERSION == 2">ament_lint_auto</test_depend>
   <test_depend      condition="$ROS_VERSION == 2">ament_lint_common</test_depend>
-  <test_depend      condition="$ROS_VERSION == 2">ament_cmake_xmllint</test_depend>
+  <build_depend     condition="$ROS_VERSION == 2">ament_cmake_xmllint</build_depend>
 
   <export>
     <!--<build_type condition="$ROS_VERSION == 2">ament_cmake</build_type>
