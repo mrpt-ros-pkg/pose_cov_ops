@@ -2,6 +2,11 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix missing cmake xmllint at configure time.
+* Contributors: Jose Luis Blanco-Claraco
+
 0.3.3 (2022-05-30)
 ------------------
 * Fix build for ros2
