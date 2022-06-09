@@ -52,20 +52,6 @@ if (ROS_2)
 	
 	find_package(geometry_msgs REQUIRED)
 	find_package(mrpt-ros2bridge REQUIRED)
-
-	# required by mrpt::ros2bridge
-	find_package(rclcpp REQUIRED)
-	find_package(nav_msgs REQUIRED)
-	find_package(stereo_msgs REQUIRED)
-	find_package(sensor_msgs REQUIRED)
-	find_package(tf2 REQUIRED)
-	find_package(cv_bridge REQUIRED)
-	add_library(imp_opencv INTERFACE IMPORTED)
-	set_target_properties(imp_opencv
-		PROPERTIES
-		INTERFACE_INCLUDE_DIRECTORIES "${OpenCV_INCLUDE_DIRS}"
-		INTERFACE_LINK_LIBRARIES "${OpenCV_LIBRARIES}"
-		)
 endif()
 
 # -----------------------------------------
