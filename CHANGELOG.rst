@@ -2,6 +2,11 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Remove find_package() calls due to wrong mrpt-ros2bridge-config.cmake in older mrpt2 versions
+* Contributors: Jose Luis Blanco-Claraco
+
 0.3.4 (2022-05-31)
 ------------------
 * Fix missing cmake xmllint at configure time.
