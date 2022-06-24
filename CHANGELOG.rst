@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.7 (2022-06-24)
+------------------
 * Remove duplicated entry in package.xml
 * Offer an C++ API with return-by-value semantics.
 * Contributors: Jose Luis Blanco-Claraco
