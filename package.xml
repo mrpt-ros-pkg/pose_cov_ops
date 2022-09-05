@@ -25,6 +25,7 @@
   <!-- COMMON DEPS -->
   <depend>mrpt2</depend>
   <depend>geometry_msgs</depend>
+  <depend>tf2</depend>
   <test_depend>gtest</test_depend>
 
   <!-- ROS1 -->

@@ -56,6 +56,18 @@ void pose_cov_ops::compose(const Pose &a, const PoseWithCovariance &b,
   out = m2r::toROS_Pose(B);
 }
 
+pose_cov_ops::PoseWithCovariance
+pose_cov_ops::compose(const pose_cov_ops::PoseWithCovariance &a,
+                      const tf2::Transform &b) {
+  using namespace mrpt::poses;
+
+  CPose3DPDFGaussian A = m2r::fromROS(a);
+  const CPose3D B = m2r::fromROS(b);
+
+  A += B;
+  return m2r::toROS_Pose(A);
+}
+
 void pose_cov_ops::inverseCompose(const Pose &a, const Pose &b, Pose &out) {
   out = m2r::toROS_Pose(m2r::fromROS(a) - m2r::fromROS(b));
 }
@@ -97,4 +109,19 @@ void pose_cov_ops::inverseCompose(const Pose &a, const PoseWithCovariance &b,
 
   const CPose3DPDFGaussian OUT = A - B;
   out = m2r::toROS_Pose(OUT);
+}
+
+pose_cov_ops::PoseWithCovariance
+pose_cov_ops::inverseCompose(const pose_cov_ops::PoseWithCovariance &a,
+                             const tf2::Transform &b) {
+  using namespace mrpt::poses;
+  using namespace mrpt::math;
+
+  const CPose3DPDFGaussian A = m2r::fromROS(a);
+  const CPose3D B_mean = m2r::fromROS(b);
+
+  const CPose3DPDFGaussian B(B_mean, CMatrixDouble66::Zero());
+
+  const CPose3DPDFGaussian OUT = A - B;
+  return m2r::toROS_Pose(OUT);
 }

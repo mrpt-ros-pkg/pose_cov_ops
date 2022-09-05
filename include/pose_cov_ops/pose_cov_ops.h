@@ -13,6 +13,7 @@
 #include <geometry_msgs/msg/pose.hpp>
 #include <geometry_msgs/msg/pose_with_covariance.hpp>
 #endif
+#include <tf2/LinearMath/Transform.h>
 
 namespace pose_cov_ops {
 
@@ -58,6 +59,11 @@ static inline PoseWithCovariance compose(const Pose &a,
   compose(a, b, out);
   return out;
 }
+
+// Return-by-value versions using TF2 transforms:
+PoseWithCovariance compose(const PoseWithCovariance &a,
+                           const tf2::Transform &b);
+
 /** @} */
 
 /** @name  Pose inverse composition (a "as seen from" b): out = a (-) b
@@ -93,6 +99,10 @@ static inline PoseWithCovariance inverseCompose(const Pose &a,
   inverseCompose(a, b, out);
   return out;
 }
+
+// Return-by-value versions using TF2 transforms:
+PoseWithCovariance inverseCompose(const PoseWithCovariance &a,
+                                  const tf2::Transform &b);
 
 /** @} */
 

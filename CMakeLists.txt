@@ -21,6 +21,7 @@ if (ROS_1)
 	## is used, also find other catkin packages
 	find_package(catkin REQUIRED COMPONENTS
 		geometry_msgs
+		tf2
 		roscpp
 	)
 
@@ -38,6 +39,7 @@ if (ROS_1)
 		LIBRARIES ${PROJECT_NAME}
 		CATKIN_DEPENDS
 				geometry_msgs
+				tf2
 		)
 		
 	find_package(mrpt-ros1bridge REQUIRED)
@@ -51,6 +53,7 @@ if (ROS_2)
 	find_package(ament_cmake REQUIRED)
 	
 	find_package(geometry_msgs REQUIRED)
+	find_package(tf2 REQUIRED)
 	find_package(mrpt-ros2bridge REQUIRED)
 endif()
 
@@ -105,7 +108,7 @@ if (ROS_1)
 		mrpt::poses
 		)
 else()
-	ament_target_dependencies(${PROJECT_NAME} rclcpp geometry_msgs)
+	ament_target_dependencies(${PROJECT_NAME} rclcpp geometry_msgs tf2)
 
 	target_link_libraries(${PROJECT_NAME} 
 		mrpt::ros2bridge
