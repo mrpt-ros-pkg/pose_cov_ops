@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.8 (2022-09-06)
+------------------
 * Add compose() and inverseCompose() versions for tf2::Transform
 * Contributors: Jose Luis Blanco Claraco
 
