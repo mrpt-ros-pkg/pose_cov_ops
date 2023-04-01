@@ -2,6 +2,13 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#12 <https://github.com/mrpt-ros-pkg/pose_cov_ops/issues/12>`_ from roncapat/patch-1
+  Fix build issues with ROS2
+* Update README.md: fix badge table
+* Contributors: Jose Luis Blanco-Claraco, Patrick Roncagliolo
+
 0.3.8 (2022-09-06)
 ------------------
 * Add compose() and inverseCompose() versions for tf2::Transform
