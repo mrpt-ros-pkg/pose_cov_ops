@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.9 (2023-04-01)
+------------------
 * Merge pull request `#12 <https://github.com/mrpt-ros-pkg/pose_cov_ops/issues/12>`_ from roncapat/patch-1
   Fix build issues with ROS2
 * Update README.md: fix badge table
