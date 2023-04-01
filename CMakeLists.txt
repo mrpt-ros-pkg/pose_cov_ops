@@ -119,7 +119,7 @@ endif()
 
 target_include_directories(${PROJECT_NAME} PUBLIC
   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
-  "$<INSTALL_INTERFACE:include/${PROJECT_NAME}>"
+  "$<INSTALL_INTERFACE:include>"
 )
 
 target_compile_definitions(${PROJECT_NAME} PUBLIC
@@ -154,7 +154,7 @@ install(TARGETS ${PROJECT_NAME} EXPORT export_${PROJECT_NAME}
 )
 
 # Mark cpp header files for installation
-install(DIRECTORY include/${PROJECT_NAME}/
+install(DIRECTORY include/${PROJECT_NAME}
 	DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 	FILES_MATCHING PATTERN "*.h"
 )
@@ -184,7 +184,7 @@ if (ROS_2)
 
 	ament_add_gtest(${PROJECT_NAME}-test test/test_pose_cov_ops.cpp)
 
-	ament_export_dependencies()
+	ament_export_dependencies(mrpt-ros2bridge)
 
 	# Export old-style CMake variables
 	ament_export_include_directories("include/${PROJECT_NAME}")
