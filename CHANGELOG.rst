@@ -2,6 +2,11 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix installation of headers for ROS 1
+* Contributors: Jose Luis Blanco Claraco
+
 0.3.9 (2023-04-01)
 ------------------
 * Merge pull request `#12 <https://github.com/mrpt-ros-pkg/pose_cov_ops/issues/12>`_ from roncapat/patch-1
