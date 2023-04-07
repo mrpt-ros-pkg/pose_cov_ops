@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.10 (2023-04-07)
+-------------------
 * Fix installation of headers for ROS 1
 * Contributors: Jose Luis Blanco Claraco
 
