@@ -7,7 +7,7 @@
 
 EOL distros
 
-| Distro | Las release  |
+| Distro | Last release  |
 | ---    | ---          |
 | ROS1 Melodic (u18.04) | [![Version](https://img.shields.io/ros/v/melodic/pose_cov_ops)](https://index.ros.org/search/?term=pose_cov_ops) |
 | ROS2 Foxy (u20.04) | [![Version](https://img.shields.io/ros/v/foxy/pose_cov_ops)](https://index.ros.org/search/?term=pose_cov_ops) |
