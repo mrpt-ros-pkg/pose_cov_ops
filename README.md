@@ -1,4 +1,4 @@
-| Distro | Develop branch | Releases | Last Sync |
+| Distro | Develop branch CI | Next release CI | Last stable version |
 | ---    | ---            | ---      |  ---      |
 | ROS1 Noetic (u20.04) | [![Build Status](https://build.ros.org/job/Ndev__pose_cov_ops__ubuntu_focal_amd64/badge/icon)](https://build.ros.org/job/Ndev__pose_cov_ops__ubuntu_focal_amd64/) | [![Build Status](https://build.ros.org/job/Nbin_uF64__pose_cov_ops__ubuntu_focal_amd64__binary/badge/icon)](https://build.ros.org/job/Nbin_uF64__pose_cov_ops__ubuntu_focal_amd64__binary/)  | [![Version](https://img.shields.io/ros/v/noetic/pose_cov_ops)](https://index.ros.org/search/?term=pose_cov_ops) |
 | ROS2 Humble  (u22.04) | [![Build Status](https://build.ros2.org/job/Hdev__pose_cov_ops__ubuntu_jammy_amd64/badge/icon)](https://build.ros2.org/job/Hdev__pose_cov_ops__ubuntu_jammy_amd64/) | [![Build Status](https://build.ros2.org/job/Hbin_uJ64__pose_cov_ops__ubuntu_jammy_amd64__binary/badge/icon)](https://build.ros2.org/job/Hbin_uJ64__pose_cov_ops__ubuntu_jammy_amd64__binary/)  | [![Version](https://img.shields.io/ros/v/humble/pose_cov_ops)](https://index.ros.org/search/?term=pose_cov_ops) |
