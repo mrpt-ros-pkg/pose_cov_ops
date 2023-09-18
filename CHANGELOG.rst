@@ -2,6 +2,12 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Fix ROS 1 warning: catkin_add_gtest() should be inside CATKIN_ENABLE_TESTING
+* Fix typos
+* Contributors: Jose Luis Blanco-Claraco
+
 0.3.10 (2023-04-07)
 -------------------
 * Fix installation of headers for ROS 1
