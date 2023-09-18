@@ -170,7 +170,9 @@ install(DIRECTORY ${INCLUDE_DIR_TO_INSTALL}
 #############
 # Add gtest based cpp test target and link libraries
 if (ROS_1)
-	catkin_add_gtest(${PROJECT_NAME}-test test/test_pose_cov_ops.cpp)
+	if(CATKIN_ENABLE_TESTING)
+		catkin_add_gtest(${PROJECT_NAME}-test test/test_pose_cov_ops.cpp)
+	endif()
 endif()
 
 if (ROS_2)
