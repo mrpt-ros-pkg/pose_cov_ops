@@ -39,12 +39,16 @@
   <!-- -->
 
 
+  <!-- re-add after removing the workaround above:
   <depend>geometry_msgs</depend>
-  <depend>tf2</depend>
+  <depend>tf2</depend> -->
   <test_depend>gtest</test_depend>
 
   <!-- ROS1 -->
-  <depend           condition="$ROS_VERSION == 1">roscpp</depend>
+  <!-- re-add after removing the workaround above:
+  <depend           condition="$ROS_VERSION == 1">roscpp</depend> -->
+
+
   <test_depend      condition="$ROS_VERSION == 1">rosunit</test_depend>
   <test_depend      condition="$ROS_VERSION == 1">gtest</test_depend>
 
