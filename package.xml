@@ -24,7 +24,7 @@
   
   <!-- COMMON DEPS -->
   <depend>mrpt_libros_bridge</depend>
-  <depend>mrpt_libros_poses</depend>
+  <depend>mrpt_libposes</depend>
 
   <depend>geometry_msgs</depend>
   <depend>tf2</depend>
