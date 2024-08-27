@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.12 (2024-08-27)
+-------------------
 * Depend on new mrpt_lib packages (deprecate mrpt2)
 * Contributors: Jose Luis Blanco-Claraco
 
