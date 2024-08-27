@@ -2,6 +2,11 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Depend on new mrpt_lib packages (deprecate mrpt2)
+* Contributors: Jose Luis Blanco-Claraco
+
 0.3.11 (2023-09-18)
 -------------------
 * Fix ROS 1 warning: catkin_add_gtest() should be inside CATKIN_ENABLE_TESTING
