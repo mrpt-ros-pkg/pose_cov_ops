@@ -19,5 +19,9 @@ pose_cov_ops
 
 MRPT C++ library-wrapper for SE(2) and SE(3) poses and points geometric operations with uncertainty.
 
+Example ROS node projects to show how to use `pose_cov_ops` in your code: 
+* For ROS 1: https://github.com/mrpt-ros-pkg/pose_cov_ops_example_ros1_package
+* For ROS 2: https://github.com/mrpt-ros-pkg/pose_cov_ops_example_ros2_package
+
 Docs: https://wiki.ros.org/pose_cov_ops
 
