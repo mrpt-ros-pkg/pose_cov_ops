@@ -40,8 +40,10 @@ if (ROS_1)
 		CATKIN_DEPENDS
 				geometry_msgs
 				tf2
+		# Export the macro to other packages
+		CFG_EXTRAS pose_cov_ops_config_extras.cmake
 		)
-		
+
 	find_package(mrpt-ros1bridge REQUIRED)
 endif()
 
@@ -122,6 +124,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
   "$<INSTALL_INTERFACE:include>"
 )
 
+# This does not seem to work with ROS1 (that's the special catkin CFG_EXTRAS above)
 target_compile_definitions(${PROJECT_NAME} PUBLIC
   PACKAGE_ROS_VERSION=${PACKAGE_ROS_VERSION}
 )
