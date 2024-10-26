@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.13 (2024-10-26)
+-------------------
 * Update README.md to add links to example ROS1/ROS2 packages.
 * FIX: Missing CMake export symbol for ROS1
 * Contributors: Jose Luis Blanco-Claraco
