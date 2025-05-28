@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.3.14 (2025-05-28)
+-------------------
 * Update README with Kilted badges
 * Fix: Remove usage of obsolete ament_target_dependencies()
 * Contributors: Jose Luis Blanco-Claraco
