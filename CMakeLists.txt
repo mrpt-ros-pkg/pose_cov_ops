@@ -110,11 +110,12 @@ if (ROS_1)
 		mrpt::poses
 		)
 else()
-	ament_target_dependencies(${PROJECT_NAME} rclcpp geometry_msgs tf2)
-
-	target_link_libraries(${PROJECT_NAME} 
+	target_link_libraries(${PROJECT_NAME}
 		mrpt::ros2bridge
 		mrpt::poses
+		rclcpp::rclcpp
+		tf2::tf2
+		${geometry_msgs_TARGETS}
 		)
 endif()
 
