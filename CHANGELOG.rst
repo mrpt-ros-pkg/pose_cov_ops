@@ -2,6 +2,12 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update README with Kilted badges
+* Fix: Remove usage of obsolete ament_target_dependencies()
+* Contributors: Jose Luis Blanco-Claraco
+
 0.3.13 (2024-10-26)
 -------------------
 * Update README.md to add links to example ROS1/ROS2 packages.
