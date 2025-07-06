@@ -4,6 +4,9 @@
 *~
 *.rawlog
 LOG_*
+install
+log
+build
 
 CMakeLists.txt.user*
 .vscode
