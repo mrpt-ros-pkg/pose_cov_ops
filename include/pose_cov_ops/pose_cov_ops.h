@@ -1,6 +1,6 @@
 /* pose_cov_ops
  *
- * Copyright 2012-2022, Jose Luis Blanco Claraco
+ * Copyright 2012-2025, Jose Luis Blanco Claraco
  * License: BSD 3-Clause License
  */
 
@@ -13,7 +13,7 @@
 #include <geometry_msgs/msg/pose.hpp>
 #include <geometry_msgs/msg/pose_with_covariance.hpp>
 #endif
-#include <tf2/LinearMath/Transform.h>
+#include <tf2/LinearMath/Transform.hpp>
 
 namespace pose_cov_ops {
 
