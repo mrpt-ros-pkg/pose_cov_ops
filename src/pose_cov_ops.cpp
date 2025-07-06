@@ -1,6 +1,6 @@
 /* pose_cov_ops
  *
- * Copyright 2012-2022, Jose Luis Blanco Claraco
+ * Copyright 2012-2025, Jose Luis Blanco Claraco
  * License: BSD 3-Clause License
  */
 
