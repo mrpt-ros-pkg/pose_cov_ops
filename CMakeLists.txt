@@ -45,6 +45,7 @@ if (ROS_1)
 		)
 
 	find_package(mrpt-ros1bridge REQUIRED)
+	find_package(mrpt-apps REQUIRED)
 endif()
 
 # -----------------------------------------
