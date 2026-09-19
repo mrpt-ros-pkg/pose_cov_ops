@@ -196,7 +196,7 @@ if (ROS_2)
 
 	ament_add_gtest(${PROJECT_NAME}-test test/test_pose_cov_ops.cpp)
 
-	ament_export_dependencies(mrpt_libros_bridge)
+	ament_export_dependencies(mrpt_libros_bridge mrpt_poses)
 
 	# Export old-style CMake variables
 	ament_export_include_directories("include/${PROJECT_NAME}")
