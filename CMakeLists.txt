@@ -56,13 +56,13 @@ if (ROS_2)
 	
 	find_package(geometry_msgs REQUIRED)
 	find_package(tf2 REQUIRED)
-	find_package(mrpt-ros2bridge REQUIRED)
+	find_package(mrpt_libros_bridge REQUIRED)
 endif()
 
 # -----------------------------------------
 # ROS 1 & 2 common deps:
 # -----------------------------------------
-find_package(mrpt-poses REQUIRED)
+find_package(mrpt_poses REQUIRED)
 
 ###########
 ## Build ##
@@ -107,12 +107,12 @@ if (ROS_1)
 		PRIVATE
 		${catkin_LIBRARIES}
 		mrpt::ros1bridge
-		mrpt::poses
+		mrpt::mrpt_poses
 		)
 else()
 	target_link_libraries(${PROJECT_NAME}
-		mrpt::ros2bridge
-		mrpt::poses
+		mrpt_libros_bridge::mrpt_libros_bridge
+		mrpt::mrpt_poses
 		rclcpp::rclcpp
 		tf2::tf2
 		${geometry_msgs_TARGETS}
@@ -196,7 +196,7 @@ if (ROS_2)
 
 	ament_add_gtest(${PROJECT_NAME}-test test/test_pose_cov_ops.cpp)
 
-	ament_export_dependencies(mrpt-ros2bridge)
+	ament_export_dependencies(mrpt_libros_bridge mrpt_poses)
 
 	# Export old-style CMake variables
 	ament_export_include_directories("include/${PROJECT_NAME}")
@@ -211,11 +211,11 @@ endif()
 if(TARGET ${PROJECT_NAME}-test)
 	target_link_libraries(${PROJECT_NAME}-test
 		${PROJECT_NAME}
-		mrpt::poses
+		mrpt::mrpt_poses
 		)
 	if (ROS_1)
 		target_link_libraries(${PROJECT_NAME}-test mrpt::ros1bridge)
 	else()
-		target_link_libraries(${PROJECT_NAME}-test mrpt::ros2bridge)
+		target_link_libraries(${PROJECT_NAME}-test mrpt_libros_bridge::mrpt_libros_bridge)
 	endif()
 endif()
