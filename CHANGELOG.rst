@@ -2,6 +2,20 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Merge pull request `#14 <https://github.com/mrpt-ros-pkg/pose_cov_ops/issues/14>`_ from mrpt-ros-pkg/mrpt3
+  Port to MRPT 3.x
+* Export mrpt_poses as an ament dependency alongside mrpt_libros_bridge
+  The library publicly links mrpt::mrpt_poses, so downstream consumers
+  need it in ament_export_dependencies() too, not just mrpt_libros_bridge.
+* docs: add ROS 2 Lyrical badge row, update Rolling to Ubuntu 26.04 (resolute)
+* Port pose_cov_ops to MRPT 2.20 (3.0 API)
+  - Replace mrpt-poses with mrpt_poses, mrpt-ros2bridge with mrpt_libros_bridge
+  - Update CMake targets to use mrpt::mrpt_poses and mrpt_libros_bridge::mrpt_libros_bridge
+  - Update package.xml dependencies to mrpt_poses and mrpt_libros_bridge
+* Contributors: Jose Luis Blanco-Claraco
+
 0.4.0 (2025-07-07)
 ------------------
 * Update copyright year
