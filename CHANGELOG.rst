@@ -2,8 +2,8 @@
 Changelog for package pose_cov_ops
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.5.0 (2026-09-30)
+------------------
 * Merge pull request `#14 <https://github.com/mrpt-ros-pkg/pose_cov_ops/issues/14>`_ from mrpt-ros-pkg/mrpt3
   Port to MRPT 3.x
 * Export mrpt_poses as an ament dependency alongside mrpt_libros_bridge
